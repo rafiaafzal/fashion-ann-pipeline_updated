@@ -1,3 +1,22 @@
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+      - src/prepare.py
+    outs:
+      - data/raw
+
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+      - src/preprocess.py
+      - data/raw
+    params:
+      - preprocess.val_split
+      - preprocess.seed
+    outs:
+      - data/processed
+
   train:
     cmd: python src/train.py
     deps:
