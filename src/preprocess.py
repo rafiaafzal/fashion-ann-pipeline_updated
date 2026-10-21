@@ -26,3 +26,5 @@ np.save("data/processed/x_test.npy", x_test)
 np.save("data/processed/y_test.npy", y_test)
 
 print("Processed data saved to data/processed/")
+
+# TODO: add data augmentation
