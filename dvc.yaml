@@ -12,7 +12,7 @@ stages:
       - src/preprocess.py
       - data/raw
     params:
-      - preprocess.val_split
+      - preprocess.test_size
       - preprocess.seed
     outs:
       - data/processed
@@ -23,11 +23,11 @@ stages:
       - src/train.py
       - data/processed
     params:
+      - train.dense_units
+      - train.dropout_rate
+      - train.learning_rate
       - train.epochs
       - train.batch_size
-      - train.learning_rate
-      - train.units
-      - train.dropout
       - train.seed
     outs:
       - models

@@ -14,8 +14,8 @@ y_val = np.load("data/processed/y_val.npy")
 model = tf.keras.Sequential([
     tf.keras.layers.Input(shape=(28, 28)),
     tf.keras.layers.Flatten(),
-    tf.keras.layers.Dense(params["units"], activation="relu"),
-    tf.keras.layers.Dropout(params["dropout"]),
+    tf.keras.layers.Dense(params["dense_units"], activation="relu"),
+    tf.keras.layers.Dropout(params["dropout_rate"]),
     tf.keras.layers.Dense(10, activation="softmax"),
 ])
 
