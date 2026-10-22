@@ -12,7 +12,7 @@ y_test = np.load("data/raw/y_test.npy")
 
 x_train, x_val, y_train, y_val = train_test_split(
     x, y,
-    test_size=params["val_split"],
+    test_size=params["test_size"],
     random_state=params["seed"],
     stratify=y,
 )
